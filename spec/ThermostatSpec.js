@@ -79,7 +79,14 @@ describe("Thermostat", function() {
     expect(thermostat.colour).toEqual("yellow");
   });
 
-
+  it("The thermostat should colour yellow when temperature is less than 25 degrees", function(){
+    power.switch_power();
+    for(t = thermostat.temperature; t <= 24; t++) {
+      thermostat.increase_temp(power);
+    }
+    thermostat.decrease_temp();
+    expect(thermostat.colour).toEqual("yellow");
+  });
 
 
 

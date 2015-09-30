@@ -27,6 +27,8 @@ Thermostat.prototype.decrease_temp = function() {
   // return this.temperature;
   if(this.temperature < 18) {
      this.colour = "green";
+  } else if (this.temperature < 25) {
+     this.colour = "yellow";
   // return this.colour;
   }
 };
