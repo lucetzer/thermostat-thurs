@@ -9,6 +9,8 @@ Power.prototype.switch_off = function() {
 Power.prototype.switch_on = function() {
   this.mode = true;
 };
+//
+//
 // Power.prototype.switch_power = function() {
 //   this.mode = !this.mode
 // };

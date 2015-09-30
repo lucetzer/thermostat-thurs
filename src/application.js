@@ -12,12 +12,13 @@ $( document ).ready(function(){
     $("#temp").text(thermostat.decrease_temp());
   });
 
-   if($('power_save').prop('checked',true)) {
-      power.switch_on();
-    } else {
-      power.switch_off();
-    };
-    });
+  //  if($('#power_save').is(':checked')) {
+  //     power.switch_on();
+  //   } else {
+  //     power.switch_off();
+  //   };
+  //   });
+
 
 
 
