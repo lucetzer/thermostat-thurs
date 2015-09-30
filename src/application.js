@@ -14,8 +14,11 @@ $( document ).ready(function(){
 
   $('#power_save').change(function() {
     power.switch_power()
- });
+  });
 
+  $("#reset").click(function(){
+    $("#temp").text(thermostat.reset_temp());
+  });
 });
 
 

@@ -21,6 +21,7 @@ Thermostat.prototype.decrease_temp = function() {
 
 Thermostat.prototype.reset_temp = function() {
   this.temperature = 20;
+  return this.temperature;
 };
 
 Thermostat.prototype._change_display = function() {
