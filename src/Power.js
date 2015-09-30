@@ -11,6 +11,4 @@ function Power() {
 // };
 Power.prototype.switch_power = function() {
   this.mode = !this.mode
-
-
 };
