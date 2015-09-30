@@ -40,7 +40,7 @@ describe("Thermostat", function() {
   });
 
   it("when power saving is off, maxmium temperature is 32 degrees", function() {
-    power.switch_off();
+    power.switch_power();
     for(t = thermostat.temperature; t <= 31; t++) {
       thermostat.increase_temp(power);
     }
@@ -48,9 +48,48 @@ describe("Thermostat", function() {
     ("Maximum temperature is 32 degrees when power saving is switched off");
   });
 
+  it("We can reset the temperature to 20 by hitting the reset button ", function(){
+    thermostat.increase_temp(power);
+    thermostat.reset_temp();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+  it("The thermostat should colour green when temperature is less than 18 degrees", function(){
+    for(t = thermostat.temperature; t >= 18; t--) {
+      thermostat.decrease_temp();
+    }
+    expect(thermostat.colour).toEqual("green");
+  });
+
+
+  it("The thermostat should colour red when temperature is more than 25 degrees", function(){
+
+    for(t = thermostat.temperature; t < 25; t++) {
+      thermostat.increase_temp(power);
+    }
+    expect(thermostat.colour).toEqual("red");
+  });
+
+
+  it("The thermostat should colour yellow when temperature is more than 17 degrees", function(){
+    for(t = thermostat.temperature; t >= 18; t--) {
+      thermostat.decrease_temp();
+    }
+    thermostat.increase_temp(power);
+    expect(thermostat.colour).toEqual("yellow");
+  });
 
 
 
+
+
+
+
+
+
+
+
+ // console.log(thermostat.temperature);
 
 //   it("should be able to play a Song", function() {
 //     player.play(song);
