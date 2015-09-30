@@ -3,9 +3,12 @@ $( document ).ready(function(){
   power = new Power();
 
   $("#temp").text(thermostat.temperature);
+  $("#display_colour").text(thermostat.colour);
 
   $("#up").click(function(){
     $("#temp").text(thermostat.increase_temp(power));
+    thermostat._change_display();
+    $("#display_colour").text(thermostat.colour);
   });
 
   $("#down").click(function(){
@@ -14,6 +17,10 @@ $( document ).ready(function(){
 
   $('#power_save').change(function() {
     power.switch_power()
+    if(thermostat.temperature > 25) {
+      thermostat.temperature = 25;
+      $("#temp").text(thermostat.temperature);
+    };
   });
 
   $("#reset").click(function(){
