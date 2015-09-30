@@ -40,7 +40,7 @@ describe("Thermostat", function() {
   });
 
   it("when power saving is off, maxmium temperature is 32 degrees", function() {
-    power.switch_off();
+    power.switch_power();
     for(t = thermostat.temperature; t <= 31; t++) {
       thermostat.increase_temp(power);
     }
@@ -63,7 +63,6 @@ describe("Thermostat", function() {
 
 
   it("The thermostat should colour red when temperature is more than 25 degrees", function(){
-
     for(t = thermostat.temperature; t < 25; t++) {
       thermostat.increase_temp(power);
     }
@@ -80,7 +79,7 @@ describe("Thermostat", function() {
   });
 
   it("The thermostat should colour yellow when temperature is less than 25 degrees", function(){
-    power.switch_off();
+    power.switch_power();
     for(t = thermostat.temperature; t <= 24; t++) {
       thermostat.increase_temp(power);
     }

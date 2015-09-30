@@ -10,13 +10,13 @@ describe("Power", function() {
   });
 
   it("power saving can be switched off", function() {
-    power.switch_off();
+    power.switch_power();
     expect(power.mode).toBe(false);
   });
 
   it("power saving can be switched on", function() {
-    power.switch_off();
-    power.switch_on();
+    power.switch_power();
+    power.switch_power();
     expect(power.mode).toBe(true);
   });
 

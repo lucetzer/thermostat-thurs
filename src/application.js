@@ -12,6 +12,15 @@ $( document ).ready(function(){
     $("#temp").text(thermostat.decrease_temp());
   });
 
+  $('#power_save').change(function() {
+    power.switch_power()
+ });
+
+});
+
+
+
+
   //  if($('#power_save').is(':checked')) {
   //     power.switch_on();
   //   } else {
