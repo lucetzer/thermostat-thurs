@@ -7,6 +7,7 @@ Thermostat.prototype.increase_temp = function(power) {
   this._max_temp_check(power);
   this.temperature++;
   this._change_display();
+  return this.temperature;
 };
 
 Thermostat.prototype.decrease_temp = function() {
@@ -15,6 +16,7 @@ Thermostat.prototype.decrease_temp = function() {
   }
   this.temperature--;
   this._change_display();
+  return this.temperature;
 };
 
 Thermostat.prototype.reset_temp = function() {

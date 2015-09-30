@@ -4,9 +4,13 @@ $( document ).ready(function(){
 
   $("#temp").text(thermostat.temperature);
 
-  $("#up").click(function( thermostat.increase_temp(power) ));
+  $("#up").click(function(){
+    $("#temp").text(thermostat.increase_temp(power));
+  });
 
-
+  $("#down").click(function(){
+    $("#temp").text(thermostat.decrease_temp());
+  });
 
 });
 
