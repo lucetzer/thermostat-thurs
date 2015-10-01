@@ -1,46 +1,49 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <link rel="stylesheet" type="text/css" href="app/public/style.css">
     <meta charset="utf-8">
     <title>Thermostat</title>
   </head>
 
   <body>
-  <div id="background">
-      <img src="public/images/london.jpg" class="stretch" alt="" />
-  </div>
 
   <div id="weather_box" style="color: white">
     <div style="text-align: right">
-      <span class="weather"> Weather</span> <br>
-      <span class="city">City</span> 
+      <span class="weather"> Weather</span><br>
+      <span class="city">City</span>
     </div>
      <textarea id="city" name="location" cols="10" rows="1" placeholder="Change city"></textarea> </br>
-    <input id="cityBtn" type="submit" name="Get weather">
+     <button id="cityBtn">Go</button>
   </div>
 
-  <div id="central"> 
-    <div><span id="temp">20</span></div>
+  <div id="central">
+    <div><span id="temp">20</span><span id="degree">°</span></div>
+    <div style="display:inline-block"><a href="#" id="up"> + </a></div>
+    <div style="display:inline-block; width:60px; height:20px"></div>
+    <div style="display:inline-block"><a href="#" id="down"> - </a></div>
 
-    <div style="display:inline-block"><a href="#" id="up"> UP </a></div>
-    <div style="display:inline-block; width:5px; height:5px"></div>
-    <div style="display:inline-block"><a href="#" id="down"> DOWN </a></div>
+  </div>
 
+  <div>
     <form action="">
-      <input type="checkbox" id="power_save" checked >Power save mode
+      <input type="checkbox" id="power" checked >
+      <span id="power">Power save mode</span>
     </form>
-
-    <a href="#" id="reset"> Reset temperature </a>
   </div>
+
+  <p>
+    <a href="#" id="reset"> RESET </a>
+  </p>
+
   </body>
 
   <script src="lib/jquery.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="src/application.js"></script>
-  <script src="src/Power.js"></script>
-  <script src="src/Thermostat.js"></script>
-  <script src="src/weather.js"></script>
+  <script src="app/src/application.js"></script>
+  <script src="app/src/Power.js"></script>
+  <script src="app/src/Thermostat.js"></script>
+  <script src="app/src/weather.js"></script>
 
 
 </html>

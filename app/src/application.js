@@ -18,7 +18,7 @@ $(document).ready(function() {
     $('#central').css('background-color', thermostat.colour);
   });
 
-  $('#power_save').change(function() {
+  $('#power').change(function() {
     power.switch_power()
     if(thermostat.temperature > 25) {
       thermostat.temperature = 25;

@@ -1,0 +1,79 @@
+body {
+  background-image: url("http://www.hdwallpapersfreedownload.com/uploads/large/cities/london-hd-photos.jpg");
+}
+
+#weather_box {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.weather {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: helvetica, sans-serif;
+}
+
+.city {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: helvetica, sans-serif;
+}
+
+#city {
+  border-style: none solid solid none;
+  border-width: medium 0px 1px medium;
+  outline: none;
+  resize: none;
+  margin-top: 10px;
+  font-size: 100%;
+}
+
+#up {
+  font-size: 70px;
+  text-decoration: none;
+  color: #708090;
+}
+
+#down {
+  font-size: 70px;
+  text-decoration: none;
+  color: #708090;
+}
+
+#temp {
+  font-size: 180px;
+  font-family: calibri;
+  margin-top: 140px;
+}
+
+#degree {
+  font-size: 150px;
+  font-family: calibri;
+  margin-top: 200px;
+}
+
+#reset {
+  font-family: calibri;
+  text-decoration: none;
+  color: white
+}
+
+#power {
+  font-family: calibri;
+  color: white
+}
+
+#central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -30%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 340px;
+  height: 340px;
+  /*border: solid black;*/
+  border-radius: 100%;
+  border-width: 2px;
+}

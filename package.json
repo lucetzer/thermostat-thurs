@@ -1,0 +1,22 @@
+{
+  "name": "thermostat-thurs",
+  "version": "1.0.0",
+  "description": "Thermostat JS =============",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucetzer/thermostat-thurs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucetzer/thermostat-thurs/issues"
+  },
+  "homepage": "https://github.com/lucetzer/thermostat-thurs#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
