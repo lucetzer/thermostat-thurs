@@ -1,6 +1,6 @@
 function Thermostat() {
   this.temperature = 20;
-  this.colour = "yellow";
+  this.colour = "#ffffb2"; //ffffb2
 }
 
 Thermostat.prototype.increase_temp = function(power) {
@@ -26,11 +26,11 @@ Thermostat.prototype.reset_temp = function() {
 
 Thermostat.prototype._change_display = function() {
   if(this.temperature >= 10 && this.temperature < 18) {
-    this.colour = "green";
+    this.colour = "#adebad"; //adebad
   } else if(this.temperature >= 18 && this.temperature < 25) {
-    this.colour = "yellow";
+    this.colour = "#ffffb2"; //ffffb2
   } else {
-    this.colour = "red";
+    this.colour = "#ff4d4d"; //ff4d4d
   };
 };
 

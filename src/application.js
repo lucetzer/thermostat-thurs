@@ -4,18 +4,18 @@ $(document).ready(function() {
 
 
   $("#temp").text(thermostat.temperature);
-  $('#temp').css('color', thermostat.colour);
+  $('#central').css('background-color', thermostat.colour);
 
   $("#up").click(function(){
     $("#temp").text(thermostat.increase_temp(power));
     thermostat._change_display();
-    $('#temp').css('color', thermostat.colour);
+    $('#central').css('background-color', thermostat.colour);
   });
 
   $("#down").click(function(){
     $("#temp").text(thermostat.decrease_temp());
     thermostat._change_display();
-    $('#temp').css('color', thermostat.colour);
+    $('#central').css('background-color', thermostat.colour);
   });
 
   $('#power_save').change(function() {
@@ -23,12 +23,13 @@ $(document).ready(function() {
     if(thermostat.temperature > 25) {
       thermostat.temperature = 25;
       $("#temp").text(thermostat.temperature);
-      $('#temp').css('color', thermostat.colour);
+      $('#central').css('background-color', thermostat.colour);
     };
   });
 
   $("#reset").click(function(){
     $("#temp").text(thermostat.reset_temp());
-    $('#temp').css('color', thermostat.colour);
+    thermostat._change_display();
+    $('#central').css('background-color', thermostat.colour);
   });
 });

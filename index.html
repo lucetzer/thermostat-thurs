@@ -1,22 +1,27 @@
 <!doctype html>
 <html>
-<head>
-      <meta charset="utf-8">
-      <title>Thermostat</title>
+  <head>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <meta charset="utf-8">
+    <title>Thermostat</title>
   </head>
+
   <body>
+  <div id="background">
+      <img src="public/images/london.jpg" class="stretch" alt="" />
+  </div>
 
-    <div>
-      <p class="location"> Enter City: </p>
-      <input id="city" type="text" name="location">
-      <input id="cityBtn" type="submit" name="Get weather">
-
-      <h2 class="city">City</h2>
-      <h3 class="weather">Weather</h3>
-
+  <div id="weather_box" style="color: white">
+    <div style="text-align: right">
+      <span class="weather"> Weather</span> <br>
+      <span class="city">City</span> 
     </div>
+     <textarea id="city" name="location" cols="10" rows="1" placeholder="Change city"></textarea> </br>
+    <input id="cityBtn" type="submit" name="Get weather">
+  </div>
 
-    <div><span id="temp">20</span>&deg;C</div>
+  <div id="central"> 
+    <div><span id="temp">20</span></div>
 
     <div style="display:inline-block"><a href="#" id="up"> UP </a></div>
     <div style="display:inline-block; width:5px; height:5px"></div>
@@ -27,7 +32,7 @@
     </form>
 
     <a href="#" id="reset"> Reset temperature </a>
-
+  </div>
   </body>
 
   <script src="lib/jquery.js"></script>
@@ -36,5 +41,6 @@
   <script src="src/Power.js"></script>
   <script src="src/Thermostat.js"></script>
   <script src="src/weather.js"></script>
+
 
 </html>

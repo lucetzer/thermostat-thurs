@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+  $.ajax('http://api.openweathermap.org/data/2.5/find?q=london&units=metric', {
+      success: function(data){
+        console.log(data);        
+        var location = data.list[0].name;
+        var temperature = Math.floor(data.list[0].main.temp) + '°';
+        showCity(location);
+        showWeather(temperature);
+      }
+    });
+
   showCity = function(city) {
     $('.city').text(city);
   };
@@ -25,7 +35,7 @@ $(document).ready(function() {
       success: function(data){
         console.log(data);        
         var location = data.list[0].name;
-        var temperature = Math.floor(data.list[0].main.temp) + ' °C';
+        var temperature = Math.floor(data.list[0].main.temp) + '°';
         showCity(location);
         showWeather(temperature);
       }
