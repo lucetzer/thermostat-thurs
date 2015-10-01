@@ -6,6 +6,16 @@
   </head>
   <body>
 
+    <div>
+      <p class="location"> Enter City: </p>
+      <input id="city" type="text" name="location">
+      <input id="cityBtn" type="submit" name="Get weather">
+
+      <h2 class="city">City</h2>
+      <h3 class="weather">Weather</h3>
+
+    </div>
+
     <div><span id="temp">20</span>&deg;C</div>
 
     <div style="display:inline-block"><a href="#" id="up"> UP </a></div>
@@ -21,8 +31,10 @@
   </body>
 
   <script src="lib/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="src/application.js"></script>
   <script src="src/Power.js"></script>
   <script src="src/Thermostat.js"></script>
+  <script src="src/weather.js"></script>
 
 </html>

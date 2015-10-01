@@ -14,11 +14,12 @@ describe('Thermostat', function() {
   })
 
   it("increases temperature by 1 degree", function() {
-    // var $temperature = $('#temp');
-    // var $upLink = $('#up');
+    var $temperature = $('#temp');
+    var $upLink = $('#up');
 
-    $('#up').click();
-    expect($('#temp').text()).toContainText("21");
+    $upLink[0].click();
+    // location.href = $upLink.attr('href');
+    expect($temperature.text()).toContainText("21");
   });
 
 });
