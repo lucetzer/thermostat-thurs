@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   $.ajax('http://api.openweathermap.org/data/2.5/find?q=london&units=metric', {
       success: function(data){
-        console.log(data);
         var location = data.list[0].name;
         var temperature = Math.floor(data.list[0].main.temp) + '°C';
         showCity(location);
@@ -21,8 +20,7 @@ $(document).ready(function() {
   $("#cityBtn").click(function(){
     var city = $('#city').val();
     $.ajax('http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric', {
-      success: function(data){
-        console.log(data);
+      success: function(data) {
         var location = data.list[0].name;
         var temperature = Math.floor(data.list[0].main.temp) + '°C';
         showCity(location);
@@ -30,5 +28,32 @@ $(document).ready(function() {
       }
     });
   });
+
+  $("#location").click(initiate_geolocation);
+
+  function initiate_geolocation() {
+      navigator.geolocation.getCurrentPosition(handle_geolocation_query)
+  }
+
+  function handle_geolocation_query(position){
+      alert('Lat: ' + position.coords.latitude + ' ' +
+            'Lon: ' + position.coords.longitude);
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
+      showLocation(lat, lon);
+  };
+
+  function showLocation(lat, lon) {
+    $.ajax('http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + lat + '&' +
+    'lon=' + lon + '&units=metric', {
+      success: function(data) {
+        var location = data.name;
+        var temperature = data.main.temp + '°C';
+        showCity(location);
+        showWeather(temperature);
+      }
+    });
+  };
+
 
 });
