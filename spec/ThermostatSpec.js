@@ -8,7 +8,7 @@ describe("Thermostat", function() {
     power = new Power();
   });
 
-  it ("should start at 20 degrees and power saving is on", function() {
+  it("should start at 20 degrees and power saving is on", function() {
     expect(thermostat.temperature).toEqual(20);
     expect(power.mode).toBe(true);
   });
@@ -58,7 +58,7 @@ describe("Thermostat", function() {
     for(t = thermostat.temperature; t >= 18; t--) {
       thermostat.decrease_temp();
     }
-    expect(thermostat.colour).toEqual("green");
+    expect(thermostat.colour).toEqual("#adebad");
   });
 
 
@@ -66,7 +66,7 @@ describe("Thermostat", function() {
     for(t = thermostat.temperature; t < 25; t++) {
       thermostat.increase_temp(power);
     }
-    expect(thermostat.colour).toEqual("red");
+    expect(thermostat.colour).toEqual("#ff4d4d");
   });
 
 
@@ -75,7 +75,7 @@ describe("Thermostat", function() {
       thermostat.decrease_temp();
     }
     thermostat.increase_temp(power);
-    expect(thermostat.colour).toEqual("yellow");
+    expect(thermostat.colour).toEqual("#ffffb2");
   });
 
   it("The thermostat should colour yellow when temperature is less than 25 degrees", function(){
@@ -84,65 +84,7 @@ describe("Thermostat", function() {
       thermostat.increase_temp(power);
     }
     thermostat.decrease_temp();
-    expect(thermostat.colour).toEqual("yellow");
+    expect(thermostat.colour).toEqual("#ffffb2");
   });
 
-
-
-
-
-
-
-
-
- // console.log(thermostat.temperature);
-
-//   it("should be able to play a Song", function() {
-//     player.play(song);
-//     expect(player.currentlyPlayingSong).toEqual(song);
-//
-//     //demonstrates use of custom matcher
-//     expect(player).toBePlaying(song);
-//   });
-//
-//   describe("when song has been paused", function() {
-//     beforeEach(function() {
-//       player.play(song);
-//       player.pause();
-//     });
-//
-//     it("should indicate that the song is currently paused", function() {
-//       expect(player.isPlaying).toBeFalsy();
-//
-//       // demonstrates use of 'not' with a custom matcher
-//       expect(player).not.toBePlaying(song);
-//     });
-//
-//     it("should be possible to resume", function() {
-//       player.resume();
-//       expect(player.isPlaying).toBeTruthy();
-//       expect(player.currentlyPlayingSong).toEqual(song);
-//     });
-//   });
-//
-//   // demonstrates use of spies to intercept and test method calls
-//   it("tells the current song if the user has made it a favorite", function() {
-//     spyOn(song, 'persistFavoriteStatus');
-//
-//     player.play(song);
-//     player.makeFavorite();
-//
-//     expect(song.persistFavoriteStatus).toHaveBeenCalledWith(true);
-//   });
-//
-//   //demonstrates use of expected exceptions
-//   describe("#resume", function() {
-//     it("should throw an exception if song is already playing", function() {
-//       player.play(song);
-//
-//       expect(function() {
-//         player.resume();
-//       }).toThrowError("song is already playing");
-//     });
-//   });
 });
