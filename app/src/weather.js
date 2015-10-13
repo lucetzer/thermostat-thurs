@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $.ajax('http://api.openweathermap.org/data/2.5/find?q=london&units=metric', {
+  $.ajax('http://api.openweathermap.org/data/2.5/find?q=london&units=metric&APPID=e4e1abdb3b09808d201864dc4a0cc91c', {
       success: function(data){
         var location = data.list[0].name;
         var temperature = Math.floor(data.list[0].main.temp) + '°C';
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
   $("#cityBtn").click(function(){
     var city = $('#city').val();
-    $.ajax('http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric', {
+    $.ajax('http://api.openweathermap.org/data/2.5/find?q=' + city + '&units=metric&APPID=e4e1abdb3b09808d201864dc4a0cc91c', {
       success: function(data) {
         var location = data.list[0].name;
         var temperature = Math.floor(data.list[0].main.temp) + '°C';
@@ -44,8 +44,7 @@ $(document).ready(function() {
   };
 
   function showLocation(lat, lon) {
-    $.ajax('http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + lat + '&' +
-    'lon=' + lon + '&units=metric', {
+    $.ajax('http://api.openweathermap.org/data/2.5/weather?' + 'lat=' + lat + '&' + 'lon=' + lon + '&units=metric&APPID=e4e1abdb3b09808d201864dc4a0cc91c', {
       success: function(data) {
         var location = data.name;
         var temperature = data.main.temp + '°C';

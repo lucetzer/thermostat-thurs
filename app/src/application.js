@@ -15,19 +15,19 @@ $(document).ready(function() {
     $("#temp").text(thermostat.decrease_temp());
     $('#central').css('background-color', thermostat.colour);
   });
-  //
-  // $('#power').change(function() {
-  //   power.switch_power()
-  //   if(thermostat.temperature > 25) {
-  //     thermostat.temperature = 25;
-  //     $("#temp").text(thermostat.temperature);
-  //     $('#central').css('background-color', thermostat.colour);
-  //   };
-  // });
-  //
-  // $("#reset").click(function(){
-  //   $("#temp").text(thermostat.reset_temp());
-  //   thermostat._change_display();
-  //   $('#central').css('background-color', thermostat.colour);
-  // });
+
+  $('#power').change(function() {
+    power.switch_power()
+    if(thermostat.temperature > 25) {
+      thermostat.temperature = 25;
+      $("#temp").text(thermostat.temperature);
+      $('#central').css('background-color', thermostat.colour);
+    };
+  });
+
+  $("#reset").click(function(){
+    $("#temp").text(thermostat.reset_temp());
+    thermostat._change_display();
+    $('#central').css('background-color', thermostat.colour);
+  });
 });
